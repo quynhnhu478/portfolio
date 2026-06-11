@@ -49,11 +49,17 @@
 
         .nav-link,
         .project-link {
+            position: relative;
             display: block;
             border-radius: 4px;
             color: inherit;
             line-height: 1.35;
             text-decoration: none;
+            transition:
+                background-color 220ms ease,
+                box-shadow 220ms ease,
+                color 220ms ease,
+                transform 220ms ease;
         }
 
         .nav-link {
@@ -64,6 +70,25 @@
         .nav-link:hover,
         .project-link:hover {
             text-decoration: underline;
+        }
+
+        .nav-link.is-active,
+        .project-link.is-active {
+            background: rgba(55, 53, 47, 0.12);
+            box-shadow: inset 0 0 0 1px rgba(55, 53, 47, 0.06);
+            color: rgb(55, 53, 47);
+            font-weight: 600;
+            text-decoration: none;
+            transform: translateX(3px);
+        }
+
+        .project-link.is-active::before {
+            content: "";
+            position: absolute;
+            inset: 8px auto 8px -13px;
+            width: 3px;
+            border-radius: 999px;
+            background: rgba(55, 53, 47, 0.42);
         }
 
         .block-color-blue_background {
@@ -139,7 +164,7 @@
         <aside class="portfolio-sidebar">
             <h1 class="portfolio-title">Lê Thị Quỳnh Như<br />Digital Portfolio</h1>
             <nav class="nav-list" aria-label="Điều hướng portfolio">
-                <a class="nav-link block-color-blue_background" href="gioi-thieu.html" target="portfolio-frame">🙋‍♀️ Giới thiệu</a>
+                <a class="nav-link block-color-blue_background is-active" href="gioi-thieu.html" target="portfolio-frame">🙋‍♀️ Giới thiệu</a>
 
                 <details open>
                     <summary class="nav-link block-color-purple_background">📁 Dự án</summary>
@@ -162,5 +187,27 @@
             <iframe class="portfolio-frame" name="portfolio-frame" src="gioi-thieu.html" title="Nội dung portfolio"></iframe>
         </main>
     </div>
+    <script>
+        (function () {
+            const links = Array.from(document.querySelectorAll('a[target="portfolio-frame"]'));
+
+            function normalizePath(url) {
+                return new URL(url, window.location.href).pathname.replace(/\/+$/, "");
+            }
+
+            function setActiveByHref(href) {
+                const activePath = normalizePath(href);
+                links.forEach((link) => {
+                    link.classList.toggle("is-active", normalizePath(link.href) === activePath);
+                });
+            }
+
+            links.forEach((link) => {
+                link.addEventListener("click", () => {
+                    setActiveByHref(link.href);
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -1,72 +1,48 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lê Thị Quỳnh Như | Digital Portfolio</title>
-    <style>
-        html { -webkit-print-color-adjust: exact; }
-        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
-        html, body { margin: 0; padding: 0; }
-        @media only screen {
-            body { margin: 2em auto; max-width: 900px; color: rgb(55, 53, 47); font-family: ui-sans-serif, system-ui, sans-serif; }
-        }
-        body { line-height: 1.5; white-space: pre-wrap; }
-        a { color: inherit; text-decoration: none; display: flex; align-items: center; width: 100%; height: 100%; padding: 1rem; }
-        a:hover { text-decoration: underline; }
-        h1 { font-size: 2.5rem; font-weight: 700; margin-top: 0; margin-bottom: 0.75em; }
-        .block-color-gray { color: rgba(125, 122, 117, 1); margin-bottom: 1em; font-style: italic; }
-        hr { background: transparent; display: block; width: 100%; height: 1px; border: none; border-bottom: 1px solid rgba(55, 53, 47, 0.09); margin: 1.5em 0; }
-        .column-list { display: flex; gap: 20px; width: 100%; }
-        .column { flex: 1; min-width: 0; }
-        .card-link { border-radius: 10px; display: block; transition: transform 0.2s; cursor: pointer; }
-        .card-link:hover { transform: translateY(-2px); }
-        .block-color-blue_background { background: rgba(0, 124, 215, 0.094); }
-        .block-color-purple_background { background: rgba(102, 0, 178, 0.078); }
-        .block-color-gray_background { background: rgba(240, 239, 237, 1); }
-        .icon { margin-right: 0.5em; font-size: 1.2em; }
-        .page-cover-image { display: block; object-fit: cover; width: 100%; max-height: 30vh; margin-bottom: 1rem; }
-        .avatar-container { margin-top: -2.5rem; margin-left: 1rem; margin-bottom: 1rem; }
-        .avatar { width: 80px; height: 80px; border-radius: 20%; border: 4px solid white; object-fit: cover; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    </style>
+    <link rel="stylesheet" href="assets/site.css" />
+    <script defer src="assets/site.js"></script>
 </head>
 <body>
-    <img class="page-cover-image" src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb" alt="Cover Image"/>
-    
-    <div class="avatar-container">
-        <img class="avatar" src="IMG_4591.jpg" alt="Avatar"/>
-    </div>
+    <main class="portfolio-main">
+        <section class="hero">
+            <p class="eyebrow">Portfolio cá nhân</p>
+            <h1 class="hero-title">Hành trình học tập trong công nghệ số và AI</h1>
+            <p class="hero-text">
+                Website này được tổ chức như một portfolio nội bộ: các trang Giới thiệu, Dự án và Tổng kết nằm trong sidebar bên trái; mỗi bài tập là một trang con HTML riêng trong thư mục <strong>bai-tap/</strong>, không trỏ về trang Notion.
+            </p>
+        </section>
 
-    <main style="padding: 0 1rem;">
-        <h1>Lê Thị Quỳnh Như | Digital Portfolio</h1>
-        <p class="block-color-gray">Sinh viên Hệ Thống Thông Tin · Trường Đại học Công Nghệ - ĐHQGHN</p>
-        
-        <hr/>
-
-        <div class="column-list">
-            <div class="column">
-                <div class="card-link block-color-blue_background">
-                    <a href="Giới thiệu 377ff9b5c7f5807598b3f91873b960da.html">
-                        <span class="icon">🙋‍♀️</span><strong>Giới thiệu</strong>
-                    </a>
-                </div>
+        <section class="section">
+            <h2>Cấu trúc điều hướng</h2>
+            <p class="lead">
+                Sidebar là điểm điều hướng chính. Người xem có thể đi từ trang tổng quan sang từng bài tập mà không rời khỏi website.
+            </p>
+            <div class="grid">
+                <a class="card" href="gioi-thieu.html">
+                    <small>01</small>
+                    <strong>Giới thiệu</strong>
+                    <p>Thông tin cá nhân, ngành học, mục tiêu học tập và định hướng phát triển.</p>
+                    <span>Mở trang</span>
+                </a>
+                <a class="card" href="du-an.html">
+                    <small>02</small>
+                    <strong>Dự án</strong>
+                    <p>Danh sách các bài thực hành, mỗi mục trỏ tới một trang con trong thư mục bài tập.</p>
+                    <span>Xem bài tập</span>
+                </a>
+                <a class="card" href="tong-ket.html">
+                    <small>03</small>
+                    <strong>Tổng kết</strong>
+                    <p>Phần nhìn lại quá trình học, kỹ năng tích lũy và bài học rút ra.</p>
+                    <span>Đọc tổng kết</span>
+                </a>
             </div>
-            <div class="column">
-                <div class="card-link block-color-purple_background">
-                    <a href="Dự án 377ff9b5c7f580088747e8c76f6baa9b.html">
-                        <span class="icon">📁</span><strong>Dự án</strong>
-                    </a>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card-link block-color-gray_background">
-                    <a href="Tổng kết 377ff9b5c7f580988c46efc2263e507a.html">
-                        <span class="icon">📝</span><strong>Tổng kết</strong>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <hr/>
+        </section>
     </main>
 </body>
 </html>

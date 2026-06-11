@@ -1,95 +1,49 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tổng kết | Digital Portfolio</title>
-    <style>
-        /* Tối ưu hiển thị web sạch và đồng bộ */
-        html { -webkit-print-color-adjust: exact; }
-        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
-        html, body { margin: 0; padding: 0; }
-        @media only screen {
-            body { margin: 2em auto; max-width: 900px; color: rgb(55, 53, 47); font-family: ui-sans-serif, system-ui, sans-serif; }
-        }
-        body { line-height: 1.5; white-space: pre-wrap; padding: 0 1rem; }
-        
-        /* Nút quay lại Trang chủ mượt mà */
-        .back-home { margin-bottom: 1.5rem; display: inline-block; }
-        .back-home a { color: #58A9D7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
-        .back-home a:hover { text-decoration: underline; }
-
-        .page-title { font-size: 2.5rem; font-weight: 700; margin-top: 0; margin-bottom: 0.75em; }
-        h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5em; }
-        
-        .callout { border-radius: 10px; padding: 1rem; margin: 1em 0; }
-        .block-color-yellow_background { background: rgba(211, 168, 0, 0.137); }
-        .block-color-blue_background { background: rgba(0, 124, 215, 0.094); padding: 1rem; border-radius: 10px; }
-        .block-color-red { color: rgba(207, 81, 72, 1); }
-        
-        hr { background: transparent; display: block; width: 100%; height: 1px; border: none; border-bottom: 1px solid rgba(55, 53, 47, 0.09); margin: 1.5em 0; }
-        .page-cover-image { display: block; object-fit: cover; width: 100%; max-height: 30vh; margin-bottom: 1rem; }
-        .page-header-icon-with-cover { margin-top: -2.5rem; margin-left: 1rem; margin-bottom: 1rem; font-size: 3rem; }
-        
-        ol, ul { padding-inline-start: 1.5em; margin: 0.5em 0; }
-        li { margin-bottom: 0.5em; }
-        
-        /* Màu chữ nhấn mạnh */
-        .highlight-blue { color: rgba(56, 125, 201, 1); font-weight: bold; }
-        .highlight-red { color: rgba(207, 81, 72, 1); font-weight: bold; }
-        .highlight-yellow { color: rgba(203, 148, 52, 1); font-weight: bold; }
-        .highlight-teal { color: rgba(80, 148, 110, 1); font-weight: bold; }
-        .highlight-gray { color: rgba(125, 122, 117, 1); font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="assets/site.css" />
+    <script defer src="assets/site.js"></script>
 </head>
 <body>
-    <img class="page-cover-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb" alt="Cover Image"/>
-    <div class="page-header-icon-with-cover">📝</div>
+    <main class="portfolio-main">
+        <section class="hero">
+            <p class="eyebrow">Tổng kết</p>
+            <h1 class="hero-title">Công nghệ số là đòn bẩy cho tư duy</h1>
+            <p class="hero-text">
+                Phần tổng kết nhìn lại quá trình xây dựng portfolio, các kỹ năng đã tích lũy và cách sử dụng công cụ số một cách có chiến lược.
+            </p>
+        </section>
 
-    <div class="back-home">
-        <a href="Lê Thị Quỳnh Như Digital Portfolio 377ff9b5c7f5803bb61fe061dbca600e.html">← Quay lại Trang chủ Portfolio</a>
-    </div>
+        <section class="section">
+            <h2>Những giá trị tích lũy</h2>
+            <div class="grid">
+                <div class="callout-box">
+                    <h3>Quản lý dữ liệu cá nhân</h3>
+                    <p>Biết thiết lập cây thư mục rõ ràng, đặt tên tệp thống nhất và lưu trữ tài liệu theo mục đích sử dụng.</p>
+                </div>
+                <div class="callout-box">
+                    <h3>Tư duy prompt engineering</h3>
+                    <p>Hiểu cách đặt bối cảnh, yêu cầu cấu trúc đầu ra, kiểm tra kết quả và tinh chỉnh prompt để phục vụ học tập.</p>
+                </div>
+                <div class="callout-box">
+                    <h3>Đạo đức số</h3>
+                    <p>Nhận thức rõ ranh giới giữa dùng AI để hỗ trợ và phụ thuộc vào AI, luôn ưu tiên kiểm chứng và minh bạch.</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <h1 class="page-title">Tổng kết</h1>
-        
-        <div class="callout block-color-yellow_background">
-            💡 <strong>"<em>Công nghệ số không thay thế tư duy, nó là đòn bẩy định hình năng lực.</em>"</strong>
-        </div>
-
-        <p>Hành trình xây dựng Portfolio Kỹ thuật số này không chỉ đơn thuần là việc hoàn thành chuỗi 6 bài tập thực hành, mà là một tiến trình <strong>"chuyển đổi số cá nhân"</strong> toàn diện đối với bản thân tôi suốt học kỳ vừa qua.</p>
-        <p>Qua từng dấu mốc thực nghiệm, tôi đã đạt được những bước trưởng thành cốt lõi:</p>
-
-        <h3 class="block-color-red">1. Những giá trị và kỹ năng tích lũy:</h3>
-        <ol>
-            <li>
-                <strong>Làm chủ hạ tầng dữ liệu cá nhân:</strong> Từ một người lưu trữ dữ liệu cục bộ, rời rạc, tôi đã biết cách thiết lập hệ thống cây thư mục khoa học, quy chuẩn hóa định danh tệp tin trên nền tảng đám mây 
-                (<span class="highlight-blue">G</span><span class="highlight-red">o</span><span class="highlight-yellow">o</span><span class="highlight-blue">g</span><span class="highlight-teal">l</span><span class="highlight-red">e</span> <span class="highlight-gray">Drive</span>) 
-                và tối ưu hóa không gian quản trị dự án trực quan (<strong>Trello</strong>).
-            </li>
-            <li>
-                <strong>Nâng tầm tư duy kỹ nghệ (Prompt Engineering):</strong> Tôi hiểu rằng AI không phải là một công cụ tìm kiếm cơ học, mà là một cộng sự vạn năng nếu con người biết ứng dụng các mô hình cấu trúc nâng cao như kỹ thuật Feynman, chuỗi tư duy (Chain-of-thought) hay công thức vàng 
-                <span class="highlight-red">C</span>.<strong><span class="highlight-yellow">R</span>.</strong><strong><span class="highlight-teal">E</span>.</strong><strong><span class="highlight-blue">A</span>.</strong><strong><span class="highlight-purple">T</span>.</strong><strong><span class="highlight-pink">E</span></strong>.
-            </li>
-            <li>
-                <strong>Định hình Đạo đức số (Digital Ethics):</strong> Là một sinh viên ngành Hệ thống thông tin, tôi nhận thức sâu sắc ranh giới giữa việc mượn lực công nghệ để tối ưu hiệu suất và sự phụ thuộc thụ động. Sự chính trực học thuật, tính minh bạch dữ liệu và trách nhiệm kiểm chứng thông tin luôn là kim chỉ nam trong mọi sản phẩm số của tôi.
-            </li>
-        </ol>
-
-        <h3 class="block-color-red">2. Điểm tâm đắc nhất &amp; Thách thức đã vượt qua</h3>
-        <ul>
-            <li><strong>Điểm tâm đắc nhất:</strong> Đó là việc nhìn thấy sự dịch chuyển rõ rệt trong tư duy của chính mình. Từ việc "dùng công nghệ một cách bản năng", tôi đã nâng cấp thành "quản trị công nghệ có chiến lược", biến các công cụ số thành một hệ sinh thái hỗ trợ học tập và nghiên cứu một cách có hệ thống.</li>
-            <li><strong>Thách thức lớn nhất:</strong> Trong quá trình thực hiện, khó khăn lớn nhất của tôi là việc <strong>"vượt qua quán tính cũ"</strong> để thích nghi với các tiêu chuẩn số hóa nghiêm ngặt. Việc từ bỏ thói quen đặt tên file tùy tiện, ép bản thân vào kỷ luật quản lý tiến độ trên Trello, hay việc liên tục nhận diện và sửa đổi các "lỗ hổng" thông tin (AI Hallucination) khi làm việc với AI từng có lúc khiến tôi bối rối và tốn nhiều thời gian.</li>
-            <li><strong>Cách giải quyết:</strong> Tôi đã vượt qua bằng cách áp dụng tư duy cuốn chiếu — chuẩn hóa ngay từ những dữ liệu nhỏ nhất, đồng thời chủ động xây dựng bộ tiêu chí kiểm định (cross-check) lại mọi kết quả mà AI kết xuất trước khi đưa vào sản phẩm cuối cùng.</li>
-        </ul>
-
-        <hr/>
-
-        <div class="block-color-blue_background">
-            <strong>Lời kết:</strong><br/>
-            Khép lại môn học, Portfolio này chính là một "bản CV kỹ thuật số" trực quan, minh chứng cho năng lực thích ứng, tư duy phân tích và giải quyết vấn đề hệ thống của tôi trong nền kinh tế tri thức. Những kỹ năng số nền tảng tích lũy được tại đây chắc chắn sẽ là <strong>bước đệm vững chắc</strong>, sẵn sàng hành trang để tôi tiếp cận và làm chủ các hệ thống thông tin doanh nghiệp phức tạp hơn trong tương lai.
-        </div>
-        
-        <hr/>
+        <section class="section">
+            <h2>Bài học rút ra</h2>
+            <p class="lead">
+                Điểm quan trọng nhất của portfolio không chỉ là hoàn thành 6 bài tập, mà là hình thành thói quen làm việc có hệ thống: lưu trữ có cấu trúc, xử lý thông tin có kiểm chứng, cộng tác có kế hoạch và dùng AI như một công cụ tăng năng lực cá nhân.
+            </p>
+            <div class="callout-box">
+                <p><strong>Lời kết:</strong> Portfolio này là bằng chứng cho quá trình chuyển đổi từ việc dùng công nghệ theo thói quen sang quản trị công nghệ có mục tiêu, có trách nhiệm và có khả năng giải trình.</p>
+            </div>
+        </section>
     </main>
 </body>
 </html>

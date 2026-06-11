@@ -1,48 +1,166 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lê Thị Quỳnh Như | Digital Portfolio</title>
-    <link rel="stylesheet" href="assets/site.css" />
-    <script defer src="assets/site.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: rgb(55, 53, 47);
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .portfolio-shell {
+            display: grid;
+            grid-template-columns: 305px minmax(0, 1fr);
+            height: 100vh;
+            background: #fff;
+        }
+
+        .portfolio-sidebar {
+            overflow-y: auto;
+            border-right: 1px solid rgba(55, 53, 47, 0.16);
+            background: #fff;
+            padding: 24px 22px;
+        }
+
+        .portfolio-title {
+            margin: 0 0 18px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.16);
+            color: rgb(55, 53, 47);
+            font-size: 1.28rem;
+            line-height: 1.25;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .nav-link,
+        .project-link {
+            display: block;
+            border-radius: 4px;
+            color: inherit;
+            line-height: 1.35;
+            text-decoration: none;
+        }
+
+        .nav-link {
+            padding: 12px 14px;
+            font-size: 1rem;
+        }
+
+        .nav-link:hover,
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .block-color-blue_background {
+            background: rgba(229, 242, 252, 1);
+        }
+
+        .block-color-purple_background {
+            background: rgba(243, 235, 249, 1);
+        }
+
+        .block-color-gray_background {
+            background: rgba(240, 239, 237, 1);
+        }
+
+        details {
+            margin: 0;
+        }
+
+        summary {
+            cursor: pointer;
+            list-style-position: outside;
+        }
+
+        .project-list {
+            display: grid;
+            gap: 4px;
+            margin: 8px 0 0 18px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(55, 53, 47, 0.16);
+        }
+
+        .project-link {
+            padding: 8px 10px;
+            color: rgba(55, 53, 47, 0.8);
+            font-size: 0.94rem;
+        }
+
+        .portfolio-content {
+            min-width: 0;
+            height: 100vh;
+            background: #fff;
+        }
+
+        .portfolio-frame {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #fff;
+        }
+
+        @media (max-width: 760px) {
+            .portfolio-shell {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto minmax(0, 1fr);
+            }
+
+            .portfolio-sidebar {
+                max-height: 42vh;
+                border-right: 0;
+                border-bottom: 1px solid rgba(55, 53, 47, 0.16);
+            }
+
+            .portfolio-content {
+                height: auto;
+                min-height: 58vh;
+            }
+        }
+    </style>
 </head>
 <body>
-    <main class="portfolio-main">
-        <section class="hero">
-            <p class="eyebrow">Portfolio cá nhân</p>
-            <h1 class="hero-title">Hành trình học tập trong công nghệ số và AI</h1>
-            <p class="hero-text">
-                Website này được tổ chức như một portfolio nội bộ: các trang Giới thiệu, Dự án và Tổng kết nằm trong sidebar bên trái; mỗi bài tập là một trang con HTML riêng trong thư mục <strong>bai-tap/</strong>, không trỏ về trang Notion.
-            </p>
-        </section>
+    <div class="portfolio-shell">
+        <aside class="portfolio-sidebar">
+            <h1 class="portfolio-title">Lê Thị Quỳnh Như<br />Digital Portfolio</h1>
+            <nav class="nav-list" aria-label="Điều hướng portfolio">
+                <a class="nav-link block-color-blue_background" href="gioi-thieu.html" target="portfolio-frame">🙋‍♀️ Giới thiệu</a>
 
-        <section class="section">
-            <h2>Cấu trúc điều hướng</h2>
-            <p class="lead">
-                Sidebar là điểm điều hướng chính. Người xem có thể đi từ trang tổng quan sang từng bài tập mà không rời khỏi website.
-            </p>
-            <div class="grid">
-                <a class="card" href="gioi-thieu.html">
-                    <small>01</small>
-                    <strong>Giới thiệu</strong>
-                    <p>Thông tin cá nhân, ngành học, mục tiêu học tập và định hướng phát triển.</p>
-                    <span>Mở trang</span>
-                </a>
-                <a class="card" href="du-an.html">
-                    <small>02</small>
-                    <strong>Dự án</strong>
-                    <p>Danh sách các bài thực hành, mỗi mục trỏ tới một trang con trong thư mục bài tập.</p>
-                    <span>Xem bài tập</span>
-                </a>
-                <a class="card" href="tong-ket.html">
-                    <small>03</small>
-                    <strong>Tổng kết</strong>
-                    <p>Phần nhìn lại quá trình học, kỹ năng tích lũy và bài học rút ra.</p>
-                    <span>Đọc tổng kết</span>
-                </a>
-            </div>
-        </section>
-    </main>
+                <details open>
+                    <summary class="nav-link block-color-purple_background">📁 Dự án</summary>
+                    <div class="project-list">
+                        <a class="project-link" href="du-an.html" target="portfolio-frame">Tổng quan dự án</a>
+                        <a class="project-link" href="bai-tap/bai-1.html" target="portfolio-frame">Bài tập 1: Tệp tin và thư mục</a>
+                        <a class="project-link" href="bai-tap/bai-2.html" target="portfolio-frame">Bài tập 2: Khai thác dữ liệu</a>
+                        <a class="project-link" href="bai-tap/bai-3.html" target="portfolio-frame">Bài tập 3: Trí tuệ nhân tạo</a>
+                        <a class="project-link" href="bai-tap/bai-4.html" target="portfolio-frame">Bài tập 4: Hợp tác trực tuyến</a>
+                        <a class="project-link" href="bai-tap/bai-5.html" target="portfolio-frame">Bài tập 5: Sáng tạo nội dung số</a>
+                        <a class="project-link" href="bai-tap/bai-6.html" target="portfolio-frame">Bài tập 6: AI có trách nhiệm</a>
+                    </div>
+                </details>
+
+                <a class="nav-link block-color-gray_background" href="tong-ket.html" target="portfolio-frame">📝 Tổng kết</a>
+            </nav>
+        </aside>
+
+        <main class="portfolio-content">
+            <iframe class="portfolio-frame" name="portfolio-frame" src="gioi-thieu.html" title="Nội dung portfolio"></iframe>
+        </main>
+    </div>
 </body>
 </html>

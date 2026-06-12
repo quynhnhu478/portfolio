@@ -181,6 +181,13 @@
 
         initLightbox();
         repairExternalLinks();
+        initLightbox();
+        repairExternalLinks();
+
+        // 🔴 ĐỒNG BỘ NGƯỢC TRẠNG THÁI ACTIVE LÊN MENU TRANG CHA
+        if (window.parent && typeof window.parent.setActiveByHref === "function") {
+            window.parent.setActiveByHref(window.location.href);
+        }
     }
 
     if (document.readyState === "loading") {

@@ -390,3 +390,63 @@ body.notion-export.has-portfolio-sidebar a[href*="app.notion.com"] {
         border-radius: 22px;
     }
 }
+/* Ép toàn bộ tiêu đề lớn, tiêu đề phụ, mục summary và TẤT CẢ các thẻ con bên trong chúng luôn đậm đều nét (700) */
+h1, h2, h3, h4, summary,
+h1 *, h2 *, h3 *, h4 *, summary * {
+    font-weight: 700 !important;
+}
+/* ===================================================
+   TỐI ƯU HOÁ HIỆU ỨNG ĐÓNG MỞ (DETAILS/SUMMARY)
+   =================================================== */
+
+/* 1. Ẩn mũi tên mặc định của trình duyệt và tạo nút bấm chuyên nghiệp */
+summary {
+    list-style: none; /* Chuẩn hiện đại */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background 200ms ease, color 200ms ease;
+}
+summary::-webkit-details-marker {
+    display: none; /* Dành cho các trình duyệt nhân Chromium cũ và Safari */
+}
+
+/* 2. Tạo mũi tên Chevron tinh tế trước đề mục lớn */
+summary::before {
+    content: "⌄"; /* Biểu tượng mũi tên Chevron */
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--accent);
+    display: inline-block;
+    margin-right: 12px;
+    transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(-90deg); /* Trỏ sang phải khi đang đóng */
+}
+
+/* 3. Xoay mũi tên chúc xuống mượt mà khi mục đang mở [open] */
+details[open] > summary::before {
+    transform: rotate(0deg); /* Trỏ xuống dưới khi đang mở */
+}
+
+/* 4. Hiệu ứng Hover làm nổi bật vùng click để định hướng người dùng */
+summary:hover {
+    background: rgba(47, 111, 115, 0.05); /* Highlight nhẹ màu xanh thương hiệu */
+}
+/* Tùy chỉnh thanh cuộn cho các trình duyệt hiện đại (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Độ rộng của thanh cuộn */
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg); /* Màu nền của đường ray thanh cuộn */
+}
+::-webkit-scrollbar-thumb {
+    background: var(--line); /* Màu của con trỏ thanh cuộn */
+    border-radius: 99px;     /* Bo tròn con trỏ */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent); /* Đổi màu xanh khi di chuột qua */
+}

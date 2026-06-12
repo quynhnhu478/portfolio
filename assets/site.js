@@ -115,6 +115,10 @@
         sidebar.appendChild(nav);
         document.body.prepend(sidebar);
         repairNotionLinks(rootPrefix);
+        // Đồng bộ tiêu đề trang con lên thanh tiêu đề của trình duyệt trang cha
+        if (window.parent && window.parent !== window) {
+            window.parent.document.title = document.title + " | Lê Thị Quỳnh Như";
+        }
     }
 
     if (document.readyState === "loading") {

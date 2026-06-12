@@ -216,7 +216,6 @@
     <script>
         (function () {
             const links = Array.from(document.querySelectorAll('a[target="portfolio-frame"]'));
-            const iframe = document.querySelector(".portfolio-frame"); // Định vị khung hiển thị bài viết
 
             function normalizePath(url) {
                 return new URL(url, window.location.href).pathname.replace(/\/+$/, "");
@@ -229,26 +228,16 @@
                 });
             }
 
-            // Sự kiện click trực tiếp trên thanh menu trái
             links.forEach((link) => {
                 link.addEventListener("click", () => {
                     setActiveByHref(link.href);
                 });
             });
 
-            // 🌟 TỰ ĐỘNG ĐỒNG BỘ HÓA MENU KHI TRANG CON CHUYỂN HƯỚNG
-            if (iframe) {
-                iframe.addEventListener("load", function () {
-                    try {
-                        // Đọc đường dẫn trang con đang hiển thị và kích hoạt sáng màu menu tương ứng
-                        const currentHref = iframe.contentWindow.location.href;
-                        setActiveByHref(currentHref);
-                    } catch (e) {
-                        console.log("Lỗi đồng bộ menu:", e);
-                    }
-                });
-            }
+            // 🔴 THÊM DÒNG NÀY ĐỂ TRANG CON TRONG IFRAME CÓ THỂ GỌI ĐƯỢC HÀM NÀY
+            window.setActiveByHref = setActiveByHref;
         })();
     </script>
+
 </body>
 </html>

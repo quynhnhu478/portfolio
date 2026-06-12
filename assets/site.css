@@ -450,3 +450,156 @@ summary:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent); /* Đổi màu xanh khi di chuột qua */
 }
+/* ===================================================
+   TỐI ƯU HÓA BẢNG BIỂU CHUYÊN NGHIỆP (PREMIUM TABLES)
+   =================================================== */
+
+/* 1. Thiết kế lại khung bảng tổng thể */
+.page-body table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 32px 0 !important;
+    font-size: 0.85rem !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--line) !important;
+    box-shadow: 0 10px 30px rgba(37, 33, 28, 0.04) !important; /* Đổ bóng nhẹ */
+}
+
+/* 2. Cách tân Header của bảng (Tiêu đề cột) */
+.page-body th {
+    background-color: var(--panel-strong) !important; /* Màu nền panel ấm áp của site */
+    color: var(--ink) !important;
+    font-weight: 700 !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.06em;
+    padding: 14px 16px !important;
+    border: none !important;
+    border-bottom: 2px solid var(--line) !important; /* Chỉ giữ đường kẻ phân tách dưới header */
+}
+
+/* 2. Cách tân Header của bảng (Tiêu đề cột) */
+.page-body th {
+    background-color: #f2ede4 !important;       /* Đổi thành màu xám kem nhạt */
+    color: #25211c !important;                  /* Giữ màu chữ xám đen tối sẫm */
+    font-weight: 700 !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.06em;
+    padding: 14px 16px !important;
+    border: none !important;
+    border-bottom: 2px solid var(--line) !important;
+}
+/* 4. Hiệu ứng tô nền xen kẽ các dòng (Zebra Striping) */
+.page-body tr:nth-child(even) {
+    background-color: rgba(255, 250, 241, 0.4) !important;
+}
+
+/* Hiệu ứng nổi bật dòng khi di chuột qua */
+.page-body tr:hover {
+    background-color: rgba(47, 111, 115, 0.03) !important;
+}
+
+/* 5. Định dạng số thứ tự (STT) ở cột đầu tiên */
+.page-body td:first-child,
+.page-body th:first-child {
+    text-align: center !important;
+    font-weight: 700;
+    color: var(--accent);
+}
+/* 6. PHÉP PHÙ THỦY: Thu gọn các đường link URL dài thành dạng nút bấm (Badge) màu Hồng Pastel */
+.page-body td a {
+    display: inline-block !important;
+    background: #FCF8F8 !important;                /* Nền hồng blush pastel cực nhẹ */
+    color: #F5AFAF !important;                     /* Chữ màu hồng sẫm để đảm bảo độ tương phản dễ đọc */
+    text-decoration: none !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(194, 24, 91, 0.18) !important; /* Đường viền hồng pastel nhạt */
+    transition: all 180ms ease !important;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Hiệu ứng tương tác khi di chuột vào nút liên kết màu Hồng Pastel */
+.page-body td a:hover {
+    background: #FFA4A4 !important;                /* Nền hồng trung tính sáng lên khi hover */
+    color: #ffffff !important;                     /* Chữ chuyển sang màu trắng */
+    box-shadow: 0 4px 12px rgba(236, 64, 122, 0.25) !important; /* Đổ bóng hồng mịn màng */
+    transform: translateY(-1px);
+}
+/* Đồng bộ màu sắc liên kết trong bài viết theo tông màu xanh thương hiệu */
+.page-body a {
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    border-bottom: 1px dashed rgba(47, 111, 115, 0.4);
+    transition: all 150ms ease;
+}
+.page-body a:hover {
+    color: var(--accent-strong) !important;
+    border-bottom: 1px solid var(--accent-strong);
+}
+/* Tự động thêm biểu tượng tệp tin trước các liên kết tải báo cáo */
+.source a::before {
+    content: "📄 "; /* Icon hình tờ tài liệu */
+    font-size: 0.95rem;
+    margin-right: 6px;
+    display: inline-block;
+}
+.callout {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important; /* Màu xám ghi rất nhạt */
+    border-left: 4px solid #E4E0E1 !important;        /* Vạch đứng màu hồng đậm */
+    border-radius: 12px !important;
+    background-color: #F8F8F8 !important;             /* Nền hồng blush nhẹ nhàng */
+    padding: 16px 20px !important;
+    box-shadow: 0 4px 15px rgba(236, 64, 122, 0.05) !important;
+}
+/* =========================================================================================
+   ĐỒNG BỘ & CHUẨN CHỈNH TOÀN BỘ VIỀN BẢNG (TRIỆT TIÊU VIỀN DỌC, GIỮ VIỀN NGANG TINH TẾ)
+   ========================================================================================= */
+
+/* 1. Triệt tiêu hoàn toàn 100% tất cả các đường kẻ dọc (Trái & Phải) trên toàn bảng */
+.page-body table,
+.page-body th,
+.page-body td,
+.page-body tr,
+.page-body thead,
+.page-body tbody {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* 2. Thiết lập lại khung viền ngang của bảng */
+.page-body table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid rgba(222, 209, 190, 0.5) !important;    /* Viền trên cùng mỏng nhẹ */
+    border-bottom: 2px solid var(--line) !important;              /* Viền dưới cùng dày dặn hơn */
+    box-shadow: 0 10px 30px rgba(37, 33, 28, 0.03) !important;
+}
+
+/* 3. Căn chỉnh viền dưới của Header cột (Không có viền trên) */
+.page-body th {
+    border-top: none !important;
+    border-bottom: 2px solid var(--line) !important;              /* Đường phân tách dưới header */
+    padding: 14px 16px !important;
+    vertical-align: middle !important;
+}
+
+/* 4. Căn chỉnh viền ngang phân tách giữa các dòng (Không có viền trên) */
+.page-body td {
+    border-top: none !important;
+    border-bottom: 1px solid rgba(222, 209, 190, 0.3) !important; /* Đường viền ngang mỏng tinh tế */
+    padding: 14px 16px !important;
+    vertical-align: middle !important;
+}

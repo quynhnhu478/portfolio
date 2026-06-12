@@ -54,10 +54,10 @@
             link.classList.add("is-active");
         }
         if (item.count) {
-            const count = document.createElement("span");
-            count.className = "nav-link__count";
-            count.textContent = item.count;
-            link.appendChild(count);
+            const documentElement = document.createElement("span");
+            documentElement.className = "nav-link__count";
+            documentElement.textContent = item.count;
+            link.appendChild(documentElement);
         }
         return link;
     }
@@ -70,7 +70,70 @@
         });
     }
 
+    // Thuật toán tự động sửa liên kết ngoài
+    function repairExternalLinks() {
+        document.querySelectorAll('a').forEach(function (link) {
+            const href = link.getAttribute('href');
+            if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    }
+
+    // Thuật toán phóng to ảnh
+    function initLightbox() {
+        document.querySelectorAll('figure.image a, .image a').forEach(function (link) {
+            if (/\.(jpg|jpeg|png|webp|gif|svg)$/i.test(link.href)) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    const overlay = document.createElement("div");
+                    overlay.className = "portfolio-lightbox-overlay";
+                    overlay.style.cssText = [
+                        "position: fixed; top: 0; left: 0; width: 100%; height: 100%;",
+                        "background: rgba(22, 19, 16, 0.9); z-index: 999999;",
+                        "display: flex; align-items: center; justify-content: center;",
+                        "opacity: 0; transition: opacity 220ms ease; cursor: zoom-out;"
+                    ].join(" ");
+
+                    const img = document.createElement("img");
+                    img.src = this.href;
+                    img.style.cssText = [
+                        "max-width: 90%; max-height: 90%; border-radius: 12px;",
+                        "box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);",
+                        "transform: scale(0.96); transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);"
+                    ].join(" ");
+
+                    overlay.appendChild(img);
+                    document.body.appendChild(overlay);
+
+                    requestAnimationFrame(function () {
+                        overlay.style.opacity = "1";
+                        img.style.transform = "scale(1)";
+                    });
+
+                    overlay.addEventListener("click", function () {
+                        overlay.style.opacity = "0";
+                        img.style.transform = "scale(0.96)";
+                        setTimeout(function () {
+                            overlay.remove();
+                        }, 220);
+                    });
+                });
+            }
+        });
+    }
+
     function init() {
+        // 🔴 BỘ LỌC THÔNG MINH: KHÔNG TẠO SIDEBAR TRONG IFRAME
+        if (window.parent && window.parent !== window) {
+            // Nếu đang chạy trong iframe: Chỉ chạy các tính năng phụ, không tạo menu thừa
+            initLightbox();
+            repairExternalLinks();
+            return; // Thoát ra ngay lập tức để không tạo sidebar thừa
+        }
+
         if (document.querySelector(".portfolio-sidebar")) {
             return;
         }
@@ -115,10 +178,9 @@
         sidebar.appendChild(nav);
         document.body.prepend(sidebar);
         repairNotionLinks(rootPrefix);
-        // Đồng bộ tiêu đề trang con lên thanh tiêu đề của trình duyệt trang cha
-        if (window.parent && window.parent !== window) {
-            window.parent.document.title = document.title + " | Lê Thị Quỳnh Như";
-        }
+
+        initLightbox();
+        repairExternalLinks();
     }
 
     if (document.readyState === "loading") {
